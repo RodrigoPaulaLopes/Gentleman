@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  gentleman-app-local:
+    build: 
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: gentleman-vue-local
+    ports:
+      - "80:5173"
+    restart: unless-stopped
+    volumes:
+      - .:/app
+
