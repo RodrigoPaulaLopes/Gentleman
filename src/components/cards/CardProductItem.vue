@@ -3,6 +3,7 @@
     class="card rounded-none bg-base-100 w-full lg:w-96 h-[700px] cursor-pointer"
     :key="product.id"
     v-for="product in products"
+    @click="productDetails(product.id)"
   >
     <figure class="h-[600px]">
       <img
@@ -48,5 +49,10 @@ export default {
         required: true
     }
   },
+  methods: {
+    productDetails(id){
+      this.$router.push(`/product/${id}`)
+    }
+  }
 };
 </script>
