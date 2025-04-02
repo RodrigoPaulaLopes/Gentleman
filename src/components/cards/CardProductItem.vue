@@ -1,6 +1,6 @@
 <template>
   <div
-    class="card bg-base-100 w-96 h-[700px] cursor-pointer"
+    class="card rounded-none bg-base-100 w-full lg:w-96 h-[700px] cursor-pointer"
     :key="product.id"
     v-for="product in products"
   >

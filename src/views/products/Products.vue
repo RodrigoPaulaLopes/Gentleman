@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col justify-center items-center sm:justify-start sm:flex-row sm:px-20 py-8 gap-4">
+  <div class="flex flex-col justify-center items-center sm:justify-start sm:flex-row sm:px-5 lg:px-20 py-8 gap-2 ">
     <select class="select">
-      <option disabled selected>Todos</option>
+      <option selected>Todos</option>
       <option>Camisas</option>
       <option>Calças</option>
       <option>Acessorios</option>
@@ -25,11 +25,14 @@
       </svg>
       <input type="search" class="grow" placeholder="Search" />
     </label>
+    <button>
+      <i class="fas fa-"></i>
+    </button>
     <button class="btn btn-neutral w-[320px] sm:w-[100px]">Procurar</button>
   </div>
   <CardsSkeleton v-if="loading"> </CardsSkeleton>
 
-  <div v-else class="flex gap-8 flex-wrap px-5 sm:px-20 mb-8">
+  <div v-else class="grid grid-cols-1 pb-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-2 lg:gap-8 px-4 lg:px-20">
     <CardProductItem :products="products" :toogleIcon="toogleIcon" :type_icone="type_icone"></CardProductItem>
   </div>
 </template>
