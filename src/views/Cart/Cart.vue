@@ -25,7 +25,7 @@
             <div class="mt-4 flex items-center justify-between">
               <div class="flex items-center gap-3">
                 <button
-                  class="p-1 rounded-md hover:bg-gray-700 text-gray-400 hover:text-white"
+                  class="p-1 rounded-full hover:bg-gray-700 transition-all text-gray-400 hover:text-white"
                 >
                   <i class="fas fa-minus" ></i>
                 </button>

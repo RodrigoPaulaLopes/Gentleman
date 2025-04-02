@@ -1,0 +1,76 @@
+<template>
+  <div class="flex flex-col justify-center items-center sm:justify-start sm:flex-row sm:px-20 py-8 gap-4">
+    <select class="select">
+      <option disabled selected>Todos</option>
+      <option>Camisas</option>
+      <option>Calças</option>
+      <option>Acessorios</option>
+    </select>
+    <label class="input">
+      <svg
+        class="h-[1em] opacity-50"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        <g
+          stroke-linejoin="round"
+          stroke-linecap="round"
+          stroke-width="2.5"
+          fill="none"
+          stroke="currentColor"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </g>
+      </svg>
+      <input type="search" class="grow" placeholder="Search" />
+    </label>
+    <button class="btn btn-neutral w-[320px] sm:w-[100px]">Procurar</button>
+  </div>
+  <CardsSkeleton v-if="loading"> </CardsSkeleton>
+
+  <div v-else class="flex gap-8 flex-wrap px-5 sm:px-20 mb-8">
+    <CardProductItem :products="products"></CardProductItem>
+  </div>
+</template>
+<script>
+import CardsSkeleton from "../../components/cards/CardsSkeleton.vue";
+import CardProducts from "../../components/cards/CardProducts.vue";
+import CardProductItem from "../../components/cards/CardProductItem.vue";
+export default {
+  name: "Products",
+  components: {
+    CardProducts,
+    CardsSkeleton,
+    CardProductItem,
+  },
+  data() {
+    return {
+      products: [],
+      loading: true,
+    };
+  },
+  methods: {
+    getFullName(user) {
+      return `${user.name.first} ${user.name.last}`;
+    },
+    fetchPoducts() {
+      this.loading = true;
+      fetch("https://fakestoreapi.com/products")
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          this.products = json;
+          this.loading = false;
+        })
+        .catch(() => {
+          this.loading = true;
+        });
+    },
+  },
+  created() {
+    this.fetchPoducts();
+  },
+};
+</script>
+<style></style>

@@ -102,6 +102,6 @@ export default {
 
 <style scoped>
 .router-link-active {
-  color: #fff;
+  color: black
 }
 </style>

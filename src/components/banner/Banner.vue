@@ -9,7 +9,7 @@
           <p class="mb-5 text-white">
             Descubra as últimas tendências e encontre o look perfeito para você.
           </p>
-          <button class="btn btn-neutral text-white" >Compre nossas coleções </button>
+          <button class="btn btn-neutral text-white" @click="$router.push('/products')">Compre nossas coleções </button>
         </div>
       </div>
     </div>

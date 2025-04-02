@@ -4,6 +4,7 @@ import Perfil from "./views/Perfil/Perfil.vue";
 import Cart from "./views/Cart/Cart.vue";
 import Login from "./views/login/Login.vue";
 import Register from "./views/register/Register.vue";
+import Products from "./views/products/Products.vue";
 
 const routes = [
   {
@@ -35,6 +36,11 @@ const routes = [
     component: Cart,
     name: "cart",
   },
+  {
+    path: "/products",
+    component: Products,
+    name: "products"
+  }
 ];
 
 const router = createRouter({
