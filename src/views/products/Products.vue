@@ -30,7 +30,7 @@
   <CardsSkeleton v-if="loading"> </CardsSkeleton>
 
   <div v-else class="flex gap-8 flex-wrap px-5 sm:px-20 mb-8">
-    <CardProductItem :products="products"></CardProductItem>
+    <CardProductItem :products="products" :toogleIcon="toogleIcon" :type_icone="type_icone"></CardProductItem>
   </div>
 </template>
 <script>
@@ -48,11 +48,15 @@ export default {
     return {
       products: [],
       loading: true,
+      type_icone: "fas",
     };
   },
   methods: {
     getFullName(user) {
       return `${user.name.first} ${user.name.last}`;
+    },
+    toogleIcon() {
+      this.type_icone = this.type_icone === "fas" ? "far" : "fas";
     },
     fetchPoducts() {
       this.loading = true;

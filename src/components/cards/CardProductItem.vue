@@ -39,6 +39,14 @@ export default {
       type: Array,
       required: true,
     },
+    toogleIcon: {
+        type: Function,
+        required: true
+    },
+    type_icone: {
+        type: String,
+        required: true
+    }
   },
 };
 </script>

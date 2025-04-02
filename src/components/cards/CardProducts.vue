@@ -2,7 +2,7 @@
   <div class="bg-gray-100"> 
     <h1 class="text-center sm:text-5xl text-2xl font-medium mb-6">Nossos Produtos em Destaque</h1>
     <div class="flex gap-8 flex-wrap justify-center items-center">
-      <CardProductItem :products="products"></CardProductItem>
+      <CardProductItem :products="products" :type_icone="type_icone" :toogleIcon="toogleIcon"></CardProductItem>
     </div>
   </div>
 </template>
